@@ -1,7 +1,7 @@
 //importing server framework and database
 import express from "express";
 import mongoose from "mongoose";
-import Data from "/Users/Martin/Code/Tiktok-Clone/tiktok-backend/data.js";
+import Data from "./data.js";
 import Videos from "./dbModel.js";
 
 //Instance of app
@@ -16,6 +16,12 @@ const port = 9000;
 //middlewares
 //Parse the object as a JSON OBJECT
 app.use(express.json());
+app.use((req, res, next) => {
+  //Whenever we send a request we will set the headers to the lines below --> Every Request will pass!
+  res.setHeader("Access-Control-Allow-Origin", "*"),
+    res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 
 //db config
 const connection_url =

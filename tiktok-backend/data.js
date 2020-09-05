@@ -1,6 +1,6 @@
 const data = [
   {
-    url: "/Users/Martin/Code/Tiktok-Clone/tiktok-backend/Data_Videos/chae.mp4",
+    url: "./Data_Videos/chae.mp4",
     channel: "martizor",
     description: "I love Doge",
     song: "Random Song",
